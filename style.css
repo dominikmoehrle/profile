@@ -53,9 +53,6 @@ td {
   padding: 0px 20px;
 }
 
-.container {
-  margin: 30px auto;
-}
 
 .text-center {
   text-align: center;
@@ -83,44 +80,27 @@ td {
   color: #3891A6;
 }
 
-#sidebar {
-    background-color: #384047;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    width: 120px;
-    text-align: center;
-}
-
 #content {
     margin-left: 120px;
 }
 
-#sidebar li {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    font-size: 50px;
-    color: white;
-}
-
-li {
-    display: list-item;
-    text-align: -webkit-match-parent;
-}
-
-#sidebar ul {
-    list-style: none;
-    padding-left: 0px;
-}
-
-#sidebar a.sidebar-link {
-    text-decoration: none;
-    font-size: 40px;
+.only-icons {
+    margin-top: 40px;
+    font-size: 30px;
     color: #788188;
+    text-decoration: none;
+    font-size: 25px;
+
 }
 
-#sidebar a.sidebar-link:hover {
+.only-icons > li {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+
+.only-icons:hover {
   color: white;
 }
 .banner {
@@ -145,14 +125,6 @@ li {
   margin-bottom: 20px;
 }
 
-.test {
-/*  height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-color: white;
-  position: relative;*/
-  flex: 0 0 32%;
-}
 
 .test-body {
   background-color: white;
@@ -172,40 +144,51 @@ li {
   display: flex;
   justify-content: space-between;
 }
-/*.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
+
+
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 100px;
+  position: fixed;
+  height: 100%;
 }
-.card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 10px;
-  text-transform: uppercase;
+
+#page-content-wrapper {
+  width: 100%;
 }
-.card-description {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
-  font-size: 13px;
-  }
-.card-link {
+
+.sidebar-nav {
   position: absolute;
   top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index:2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover{
-  opacity: 0.1;
-}*/
+  list-style: none;
+  margin: 0;
+  padding-left: 0px;
+  background-color: #384047;
+  bottom: 0px;
+  text-align: center;
 
+}
+
+@media (max-width:970px) {
+
+    #wrapper {
+      padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+      left: 0;
+    }
+
+    #wrapper.active {
+      position: relative;
+      left: 250px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+      left: 250px;
+      width: 250px;
+      transition: all 0.4s ease 0s;
+    }
+
+}
